@@ -15,6 +15,8 @@
  */
 package org.joda.time.tz;
 
+import com.google.j2objc.annotations.WeakOuter;
+import com.google.j2objc.annotations.Weak;
 import org.joda.time.DateTimeZone;
 
 /**
@@ -166,10 +168,11 @@ public class CachedDateTimeZone extends DateTimeZone {
         return info;
     }
 
+    @WeakOuter
     private final static class Info {
         // For first Info in chain, iPeriodStart's lower 32 bits are clear.
         public final long iPeriodStart;
-        public final DateTimeZone iZoneRef;
+        @Weak public final DateTimeZone iZoneRef;
 
         Info iNextInfo;
 
