@@ -18,6 +18,8 @@ package org.joda.time.format;
 import java.util.Arrays;
 import java.util.Locale;
 
+import com.google.j2objc.annotations.WeakOuter;
+
 import org.joda.time.Chronology;
 import org.joda.time.DateTimeField;
 import org.joda.time.DateTimeFieldType;
@@ -509,6 +511,7 @@ public class DateTimeParserBucket {
         }
     }
 
+    @WeakOuter
     class SavedState {
         final DateTimeZone iZone;
         final Integer iOffset;
